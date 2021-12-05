@@ -58,7 +58,7 @@ body{
     right: 0rem;
     /* content: url(./assets/images/hand.svg); */
     content: "";
-    background-image: url(/assets/images/hand.svg);
+    background-image: url(../images/hand.svg);
     background-repeat: no-repeat;
     background-size: 5rem 5rem;
     width: 5rem;
