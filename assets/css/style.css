@@ -1,0 +1,211 @@
+/*----------------
+Fonts Google
+_________________*/
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+
+/*----------------
+Global styles
+_________________*/
+:root{
+    --background: #121212;
+    --line: #26293F;
+    --verde: #00C337;
+    --branco-texto: #E1E1E6;
+    --main-color:#e38528;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border:none;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    text-decoration: none;
+    transition: all .2s linear;
+    /* line-height: 1.5; */
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body{
+    background: var(--background);
+}
+.btn{
+    display: inline-block;
+    margin-top: 10rem;
+    padding: 2.5rem 7rem;
+    background:var(--verde);
+    color:#fff;
+    cursor: pointer;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-align: center;
+    border-radius: .5rem;
+    transition: all 0.3s ease-out;
+}
+
+.btn:hover{
+    transform: translateY(-5px);
+}
+.btn:after{
+    position: absolute;
+    right: .5rem;
+    bottom: 3rem;
+    /* content: url(./assets/images/hand.svg); */
+    content: "";
+    background-image: url(./assets/images/hand.svg);
+    background-repeat: no-repeat;
+    background-size: 5rem 5rem;
+    width: 5rem;
+    height: 5rem;
+}
+
+/*----------------
+Container styles
+_________________*/
+.container{
+    display: flex;
+    margin: auto;
+    /* background-color: #cecece; */
+    max-width: 1440px;
+}
+
+/*-----------------------
+Sections 1 styles start
+-----------------------*/
+.first{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 19rem;
+    /* background-color: rgba(255, 255, 255, 0.03); */
+}
+.first .text-h1{
+    padding-top: 5rem;
+    /* background-color: blue; */
+    text-align: right;
+    font-size: 5rem;
+    text-transform: uppercase !important;
+    font-weight: 700;
+    color: var(--branco-texto);
+}
+.first .text-h1 span{
+    color: var(--verde);
+}
+
+
+.first .block-1{
+    /* background-color: red; */
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.first .img-block-1{
+    /* background-color: blueviolet; */
+    text-align: center;
+}
+.first img{
+    max-height: 40rem;
+    max-width: 40rem;
+}
+.first .text-block-1{
+    display: flex;
+    flex-direction: column;
+    /* background-color: tomato; */
+    justify-content: center;
+    align-items: flex-end;
+}
+.first .text-p-block-1{
+    color: var(--branco-texto);
+    font-size: 1rem;
+    text-transform: uppercase !important;
+}
+.first .text-p-block-1 span{
+    font-size: 2.5rem;
+    color: var(--verde);
+}
+.first .text-p-block-2{
+    color: var(--branco-texto);
+    font-size: 1.5rem;
+    font-weight: lighter;
+    line-height: 2rem;
+}
+.first .text-p-block-3{
+    color: var(--verde);
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-top: 2rem;
+}
+/*-----------------------
+Sections 1 styles end
+-----------------------*/
+
+
+/*-----------------------
+Sections 2 styles start
+-----------------------*/
+
+/*-----------------------
+Responsive start
+-----------------------*/
+@media (max-width:1024px){
+
+    html{
+        font-size: 55%;
+    }    
+    .first{
+        margin: 0 5rem;
+    }
+
+
+}
+
+@media (max-width:991px){
+
+    html{
+        font-size: 45%;
+    }
+   
+
+}
+
+@media (max-width:450px){
+
+    .btn{
+       margin-top: 8rem;
+       padding: 3rem 8rem;
+       font-size: 2.7rem;
+    }
+    .btn:after{
+        right: 3rem;
+        bottom: -3rem;
+    }
+    .first{
+        margin: 0 2rem;
+    }
+    .first .text-h1{
+        padding-top: 3rem;
+        text-align: center;
+        font-size: 4.3rem;
+    }
+    .first img{
+        max-height: 25rem;
+        max-width: 25rem;
+    }
+    .first .block-1{
+        display: flex;
+        flex-direction: column;
+    }
+    .first .block-1 a{
+        align-self: center;
+    }
+
+}
