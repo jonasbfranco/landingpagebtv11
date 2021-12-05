@@ -55,8 +55,7 @@ body{
 }
 .btn:after{
     position: absolute;
-    right: .5rem;
-    bottom: 3rem;
+    right: 0rem;
     /* content: url(./assets/images/hand.svg); */
     content: "";
     background-image: url(/assets/images/hand.svg);
@@ -183,10 +182,6 @@ Responsive start
        margin-top: 8rem;
        padding: 3rem 8rem;
        font-size: 2.7rem;
-    }
-    .btn:after{
-        right: 3rem;
-        bottom: -3rem;
     }
     .first{
         margin: 0 2rem;
