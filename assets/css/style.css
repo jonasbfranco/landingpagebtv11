@@ -2,17 +2,23 @@
 Fonts Google
 _________________*/
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@700&display=swap');
 
+/*----------------
+Icons Font Awesome
+_________________*/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
 /*----------------
 Global styles
 _________________*/
 :root{
     --background: #121212;
-    --line: #26293F;
-    --verde: #00C337;
+    --card-number: rgba(255, 255, 255, 0.03);;
+    --card-number-old: #26293F;
+    --card-text: rgba(130, 138, 164, 0.308);
+    --color-green: #00C337;
     --branco-texto: #E1E1E6;
-    --main-color:#e38528;
 }
 
 *{
@@ -23,7 +29,10 @@ _________________*/
     box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif;
     text-decoration: none;
-    transition: all .2s linear;
+    list-style: none;
+    /* transition: all .2s linear; */
+    letter-spacing: .1rem;
+    /* text-transform: capitalize; */
     /* line-height: 1.5; */
 }
 html{
@@ -35,12 +44,15 @@ html{
 body{
     background: var(--background);
 }
+span{
+    color: var(--color-green);
+}
 .btn{
     display: inline-block;
     margin-top: 10rem;
     padding: 2.5rem 7rem;
-    background:var(--verde);
-    color:#fff;
+    background:var(--color-green);
+    color: var(--branco-texto);
     cursor: pointer;
     font-size: 2rem;
     text-transform: uppercase;
@@ -51,8 +63,11 @@ body{
 }
 
 .btn:hover{
-    transform: translateY(-5px);
-}
+    /* transform: translateY(-5px); */
+    background: transparent;
+    color: var(--branco-texto);
+    border: 1px solid var(--color-green);
+} 
 .btn:after{
     position: absolute;
     right: 0rem;
@@ -64,15 +79,19 @@ body{
     width: 5rem;
     height: 5rem;
 }
+.hr{
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    margin: 3rem auto;
+}
 
 /*----------------
 Container styles
 _________________*/
 .container{
-    display: flex;
     margin: auto;
-    /* background-color: #cecece; */
     max-width: 1440px;
+    background-color: rgba(255, 255, 255, 0.03);
 }
 
 /*-----------------------
@@ -80,10 +99,9 @@ Sections 1 styles start
 -----------------------*/
 .first{
     position: relative;
-    width: 100%;
     display: flex;
     flex-direction: column;
-    margin: 0 19rem;
+    margin: 0 10rem;
     /* background-color: rgba(255, 255, 255, 0.03); */
 }
 .first .text-h1{
@@ -95,11 +113,6 @@ Sections 1 styles start
     font-weight: 700;
     color: var(--branco-texto);
 }
-.first .text-h1 span{
-    color: var(--verde);
-}
-
-
 .first .block-1{
     /* background-color: red; */
     /* display: flex; */
@@ -128,7 +141,6 @@ Sections 1 styles start
 }
 .first .text-p-block-1 span{
     font-size: 2.5rem;
-    color: var(--verde);
 }
 .first .text-p-block-2{
     color: var(--branco-texto);
@@ -137,7 +149,7 @@ Sections 1 styles start
     line-height: 2rem;
 }
 .first .text-p-block-3{
-    color: var(--verde);
+    color: var(--color-green);
     font-size: 3rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -147,10 +159,251 @@ Sections 1 styles start
 Sections 1 styles end
 -----------------------*/
 
-
 /*-----------------------
 Sections 2 styles start
 -----------------------*/
+.second{
+    margin: 0 10rem;
+    background-color: rgb(229, 255, 0);
+    /* background-color: rgba(255, 255, 255, 0.03); */
+}
+/*-----------------------
+Sections 2 styles end
+-----------------------*/
+
+/*-----------------------
+Sections 3 styles start
+-----------------------*/
+.third{
+    margin: 0 10rem;
+    /* background-color: rgba(255, 255, 255, 0.03); */
+}
+.third .third-title{
+    padding-top: 5rem;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--branco-texto);
+    /* background-color: blue; */
+}
+.third .third-subtitle{
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--branco-texto);
+    padding-bottom: 5rem;
+    /* background-color: blue; */
+}
+.third .third-subtitle > span{
+    text-transform: uppercase;
+}
+.cards-main{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 3rem;
+    /* grid-template-rows: 20rem; */
+
+}
+.cards-main .card-01{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+.cards-main .card-02{
+    grid-column: 2/3;
+    grid-row: 1/3;
+}
+.cards-main .card-03{
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+.cards-main .card-01 .card-title,
+.cards-main .card-02 .card-title,
+.cards-main .card-03 .card-title{
+    font-family: 'Palanquin Dark', sans-serif;
+    font-size: 20rem;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0rem;
+    line-height: 10rem;
+    text-align: left;
+    color: var(--card-number);
+}
+.cards-main .card-02 .card-title{
+    margin-top: 9rem;
+}
+.cards-main .card-01 .card-title-1,
+.cards-main .card-02 .card-title-2,
+.cards-main .card-03 .card-title-3{
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: bold;
+    color: var(--branco-texto);
+    display: flex;
+    align-items: center;
+}
+.cards-main .card-01 .card-title-1 i,
+.cards-main .card-02 .card-title-2 i,
+.cards-main .card-03 .card-title-3 i{
+    color: var(--color-green);
+    font-size: 4.5rem;
+    margin-right: 1rem;
+}
+.cards-main .card-01 .card-text,
+.cards-main .card-02 .card-text,
+.cards-main .card-03 .card-text{
+    position: relative;
+    font-size: 1.8rem;
+    font-weight: 100;
+    font-style: normal;
+    text-align: left;
+    color: var(--card-text);
+    width: 80%;
+    left: 6rem;
+}
+.third .button .btn{
+    position: relative;
+    margin-top: 5rem;
+}
+/*-----------------------
+Sections 3 styles end
+-----------------------*/
+
+/*-----------------------
+Sections 4 styles start
+-----------------------*/
+.four{
+    margin: 0 10rem;
+}
+.four .four-title{
+    padding: 3rem;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--branco-texto);
+}
+.accordion-container{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-flow: column;
+}
+.accordion-container .accordion{
+    width: 85%;
+}
+.accordion-container .accordion .accordion-header{
+    width: 100%;
+    background-color: var(--card-number);
+    color: var(--branco-texto);
+    margin: .4rem 0;
+    box-shadow: 0 2px 5px var(--card-number);
+    cursor: pointer;
+}
+.accordion-container .accordion .accordion-header .icon{
+    display: inline-block;
+    font-size: 3rem;
+    height: 6rem;
+    width: 5rem;
+    line-height: 6rem;
+    background-color: rgba(255, 255, 255, 0.03);
+    text-align: center;
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+}
+.accordion-container .accordion .accordion-header h3{
+    display: inline;
+    font-size: 2rem;
+}
+.accordion-container .accordion .accordion-body{
+    font-size: 1.4rem;
+    font-weight: 100;
+    font-style: normal;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px var(--card-number);
+    background-color: var(--card-text);
+    color: var(--branco-texto);
+    display: none;
+}
+.accordion-container .accordion:nth-child(1) .accordion-body{
+    display: block;
+}
+/*-----------------------
+Sections 4 styles end
+-----------------------*/
+
+/*-----------------------
+Sections 5 styles start
+-----------------------*/
+.five{
+    margin: 0 10rem;
+    background-color: rgb(255, 166, 0);
+    /* background-color: rgba(255, 255, 255, 0.03); */
+}
+/*-----------------------
+Sections 5 styles end
+-----------------------*/
+
+/*-----------------------
+Sections 6 styles start
+-----------------------*/
+.six{
+    margin: 0 10rem;
+    background-color: rgb(255, 166, 0);
+    /* background-color: rgba(255, 255, 255, 0.03); */
+}
+/*-----------------------
+Sections 6 styles end
+-----------------------*/
+
+
+/*-----------------------
+Footer styles start
+-----------------------*/
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 10rem;
+    /* background-color: var(--background); */
+    padding-bottom: 2rem;
+    font-size: 1.3rem;
+    color: var(--branco-texto);
+}
+.politcs ul{
+    display: flex;
+    text-align: start;
+}
+.politcs ul li:nth-child(2){
+    margin-left: 1rem;
+}
+.politcs ul li:nth-child(3){
+    margin-left: 1rem;
+}
+.politcs a{
+    position: relative;
+    color: var(--branco-texto);
+    cursor: pointer;
+}
+.politcs a:after{
+    content: "";
+    position: absolute;
+    background-color:  var(--branco-texto);
+    height: 2px;
+    width: 0;
+    left: 0;
+    bottom: -8px;
+    transition: 0.3s !important;
+}
+.politcs a:hover:after{
+    width: 100%;
+}
+
+/*-----------------------
+Footer styles end
+-----------------------*/
+
+
+
+
 
 /*-----------------------
 Responsive start
@@ -163,6 +416,21 @@ Responsive start
     .first{
         margin: 0 5rem;
     }
+    .second{
+        margin: 0 5rem;
+    }
+    .third{
+        margin: 0 5rem;
+    }
+    .four{
+        margin: 0 5rem;
+    }
+    .five{
+        margin: 0 5rem;
+    }
+    .footer{
+        margin: 0 5rem;;
+    }
 
 
 }
@@ -172,6 +440,7 @@ Responsive start
     html{
         font-size: 45%;
     }
+    
    
 
 }
@@ -179,8 +448,9 @@ Responsive start
 @media (max-width:450px){
 
     .btn{
-       margin-top: 8rem;
-       padding: 3rem 8rem;
+        width: 100%;
+       margin-top: 7rem;
+       padding: 3rem 2rem;
        font-size: 2.7rem;
     }
     .first{
@@ -201,6 +471,54 @@ Responsive start
     }
     .first .block-1 a{
         align-self: center;
+    }
+    .third{
+        margin: 0 2rem;
+    }
+    .cards-main{
+        display: grid;
+        grid-template-columns:  1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-row-gap: 5rem;
+        margin: 0 5rem;
+        /* grid-template-rows: 20rem; */
+    
+    }
+    .cards-main .card-02 .card-title{
+        margin-top: 0rem;
+    }
+    .cards-main .card-01{
+        grid-column: 1/1;
+        grid-row: 1/1;
+    }
+    .cards-main .card-02{
+        grid-column: 1/1;
+        grid-row: 2/2;
+        margin-left: 15rem;
+    }
+    .cards-main .card-03{
+        grid-column: 1/1;
+        grid-row: 3/3;
+    }
+    .four .four-title{
+        padding: 2rem;
+        text-align: center;
+        font-size: 4rem;
+    }
+    .accordion-container .accordion{
+        width: 100%;
+    }
+    .footer{
+        margin: 0 1rem;
+        padding: 0;
+    }
+    .politcs ul{
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .politcs ul li {
+        display: inline-block;
+        margin: .5rem 0;
     }
 
 }
