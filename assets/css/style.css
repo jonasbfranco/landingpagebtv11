@@ -91,7 +91,7 @@ _________________*/
 .container{
     margin: auto;
     max-width: 1440px;
-    background-color: rgba(255, 255, 255, 0.03);
+    /* background-color: rgba(255, 255, 255, 0.03); */
 }
 
 /*-----------------------
@@ -164,9 +164,57 @@ Sections 2 styles start
 -----------------------*/
 .second{
     margin: 0 10rem;
-    background-color: rgb(229, 255, 0);
-    /* background-color: rgba(255, 255, 255, 0.03); */
 }
+.second .second-title{
+    padding: 8rem 0;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--branco-texto);
+}
+.info{
+    display: flex;
+    flex-direction: column;
+}
+.info .info-card{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 2rem;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+.info .info-title{
+    grid-column: 2/3;
+    grid-row: 1/3;
+    font-size: 2rem;
+    font-weight: 700;
+    font-style: normal;
+    color: var(--color-green);
+}
+.info .info-subtitle{
+    grid-column: 2/3;
+    grid-row: 1/3;
+    position: relative;
+    font-size: 1.4rem;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--branco-texto);
+    line-height: 2rem;
+    top: 6rem;
+}
+.info .info-img{
+    grid-column: 1/1;
+    grid-row: 1/3;
+}
+.info .info-img img{
+    max-width: 50%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 1rem;
+    box-shadow: 0px 1px 10px var(--card-number);
+}
+
 /*-----------------------
 Sections 2 styles end
 -----------------------*/
@@ -176,7 +224,6 @@ Sections 3 styles start
 -----------------------*/
 .third{
     margin: 0 10rem;
-    /* background-color: rgba(255, 255, 255, 0.03); */
 }
 .third .third-title{
     padding-top: 5rem;
@@ -184,7 +231,6 @@ Sections 3 styles start
     font-size: 5rem;
     font-weight: 700;
     color: var(--branco-texto);
-    /* background-color: blue; */
 }
 .third .third-subtitle{
     text-align: center;
@@ -192,7 +238,6 @@ Sections 3 styles start
     font-weight: 700;
     color: var(--branco-texto);
     padding-bottom: 5rem;
-    /* background-color: blue; */
 }
 .third .third-subtitle > span{
     text-transform: uppercase;
@@ -477,10 +522,10 @@ Responsive start
     }
     .cards-main{
         display: grid;
-        grid-template-columns:  1fr;
+        grid-template-columns: 1fr;
         grid-template-rows: repeat(3, 1fr);
-        grid-row-gap: 5rem;
-        margin: 0 5rem;
+        grid-row-gap: .1rem;
+        justify-items: center;
         /* grid-template-rows: 20rem; */
     
     }
@@ -494,16 +539,26 @@ Responsive start
     .cards-main .card-02{
         grid-column: 1/1;
         grid-row: 2/2;
-        margin-left: 15rem;
     }
     .cards-main .card-03{
         grid-column: 1/1;
         grid-row: 3/3;
+        margin-bottom: 5rem;
+    }
+    .cards-main .card-02 .card-title{
+        text-align: center;
+    }
+    .cards-main .card-02 .card-title-2{
+        justify-content: center;
+    }
+    .cards-main .card-02 .card-text{
+       left: 21rem;
+       width: 56%;
     }
     .four .four-title{
         padding: 2rem;
         text-align: center;
-        font-size: 4rem;
+        font-size: 3.3rem;
     }
     .accordion-container .accordion{
         width: 100%;
