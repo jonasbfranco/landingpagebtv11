@@ -16,9 +16,11 @@ _________________*/
     --background: #121212;
     --card-number: rgba(255, 255, 255, 0.03);;
     --card-number-old: #26293F;
-    --card-text: rgba(130, 138, 164, 0.308);
+    --card-text-2: rgba(130, 138, 164, 0.308);
+    --card-text: #666;
     --color-green: #00C337;
     --branco-texto: #E1E1E6;
+    --box-shadow: rgba(0,0,0,.1);
 }
 
 *{
@@ -106,7 +108,6 @@ Sections 1 styles start
 }
 .first .text-h1{
     padding-top: 5rem;
-    /* background-color: blue; */
     text-align: right;
     font-size: 5rem;
     text-transform: uppercase !important;
@@ -114,13 +115,10 @@ Sections 1 styles start
     color: var(--branco-texto);
 }
 .first .block-1{
-    /* background-color: red; */
-    /* display: flex; */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
 .first .img-block-1{
-    /* background-color: blueviolet; */
     text-align: center;
 }
 .first img{
@@ -130,7 +128,6 @@ Sections 1 styles start
 .first .text-block-1{
     display: flex;
     flex-direction: column;
-    /* background-color: tomato; */
     justify-content: center;
     align-items: flex-end;
 }
@@ -172,48 +169,66 @@ Sections 2 styles start
     font-weight: 700;
     color: var(--branco-texto);
 }
-.info{
+.second .row-1,
+.second .row-2,
+.second .row-3,
+.second .row-4{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-bottom: 2rem;
 }
-.info .info-card{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-gap: 2rem;
-    align-items: center;
-    margin-bottom: 5rem;
+.second .row-1 .image,
+.second .row-2 .image,
+.second .row-3 .image,
+.second .row-4 .image{
+    flex: 1 1 10rem;
 }
-.info .info-title{
-    grid-column: 2/3;
-    grid-row: 1/3;
-    font-size: 2rem;
-    font-weight: 700;
-    font-style: normal;
+.second .row-1 .image img,
+.second .row-2 .image img,
+.second .row-3 .image img,
+.second .row-4 .image img{
+    height: 100%;
+    width:100%;
+    object-fit: fill;
+    border: .5rem solid var(--color-green);
+    border-radius: .5rem;
+    box-shadow: .3rem .3rem 1rem var(--color-green);
+}
+.second .row-1 .content,
+.second .row-2 .content,
+.second .row-3 .content,
+.second .row-4 .content{
+    flex: 1 1 80rem;
+    justify-content: center;
+    align-self: center;
+}
+
+.second .row-1 .content h3,
+.second .row-2 .content h3,
+.second .row-3 .content h3,
+.second .row-4 .content h3{
     color: var(--color-green);
+    font-size: 4rem;
 }
-.info .info-subtitle{
-    grid-column: 2/3;
-    grid-row: 1/3;
-    position: relative;
-    font-size: 1.4rem;
-    font-weight: 300;
-    font-style: normal;
+
+.second .row-1 .content p,
+.second .row-2 .content p,
+.second .row-3 .content p,
+.second .row-4 .content p{
+    color:var(--card-text);
+    font-size: 1.7rem;
+    padding: .5rem 0;
+}
+.second .row-2 .content strong{
     color: var(--branco-texto);
-    line-height: 2rem;
-    top: 6rem;
+    font-size: 1.7rem;
+    font-weight: bolder;
+    display: inline-block;
+    padding: 1rem 0;
 }
-.info .info-img{
-    grid-column: 1/1;
-    grid-row: 1/3;
-}
-.info .info-img img{
-    max-width: 50%;
-    display: block;
-    margin: 0 auto;
-    border-radius: 1rem;
-    box-shadow: 0px 1px 10px var(--card-number);
-}
+
+
 
 /*-----------------------
 Sections 2 styles end
@@ -334,7 +349,7 @@ Sections 4 styles start
     flex-flow: column;
 }
 .accordion-container .accordion{
-    width: 85%;
+    width: 100%;
 }
 .accordion-container .accordion .accordion-header{
     width: 100%;
@@ -380,23 +395,37 @@ Sections 5 styles start
 -----------------------*/
 .five{
     margin: 0 10rem;
-    background-color: rgb(255, 166, 0);
-    /* background-color: rgba(255, 255, 255, 0.03); */
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+}
+.banner{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.banner .content{
+    position: absolute;
+    z-index: 1;
+    margin: 0 auto;
+    text-align: center;
+    border: 2rem solid var(--background);
+    border-radius: 1rem;
+    box-shadow: 0rem 0rem 2rem var(--color-green);
+}
+.five .button .btn{
+    position: relative;
+    margin-top: 5rem;
 }
 /*-----------------------
 Sections 5 styles end
------------------------*/
-
-/*-----------------------
-Sections 6 styles start
------------------------*/
-.six{
-    margin: 0 10rem;
-    background-color: rgb(255, 166, 0);
-    /* background-color: rgba(255, 255, 255, 0.03); */
-}
-/*-----------------------
-Sections 6 styles end
 -----------------------*/
 
 
@@ -417,9 +446,11 @@ Footer styles start
     display: flex;
     text-align: start;
 }
-.politcs ul li:nth-child(2){
-    margin-left: 1rem;
+.politcs ul li{
+    display: inline-block;
+    padding: .5rem 0;
 }
+.politcs ul li:nth-child(2),
 .politcs ul li:nth-child(3){
     margin-left: 1rem;
 }
@@ -445,6 +476,13 @@ Footer styles start
 /*-----------------------
 Footer styles end
 -----------------------*/
+
+
+
+
+
+
+
 
 
 
@@ -477,7 +515,6 @@ Responsive start
         margin: 0 5rem;;
     }
 
-
 }
 
 @media (max-width:991px){
@@ -485,9 +522,18 @@ Responsive start
     html{
         font-size: 45%;
     }
-    
-   
-
+    .second .row-1 .image,
+    .second .row-2 .image,
+    .second .row-3 .image,
+    .second .row-4 .image{
+        flex: 1 1 10rem;
+    }
+    .second .row-1 .content,
+    .second .row-2 .content,
+    .second .row-3 .content,
+    .second .row-4 .content{
+        flex: 1 1 50rem;
+    }
 }
 
 @media (max-width:450px){
@@ -517,7 +563,28 @@ Responsive start
     .first .block-1 a{
         align-self: center;
     }
+    .second{
+        margin: 0 2rem;
+    }
+    .second .row-1 .image,
+    .second .row-2 .image,
+    .second .row-3 .image,
+    .second .row-4 .image{
+        flex: 1 1 10rem;
+    }
+    .second .row-1 .content,
+    .second .row-2 .content,
+    .second .row-3 .content,
+    .second .row-4 .content{
+        flex: 1 1 15rem;
+    }
     .third{
+        margin: 0 2rem;
+    }
+    .four{
+        margin: 0 2rem;
+    }
+    .five{
         margin: 0 2rem;
     }
     .cards-main{
@@ -562,6 +629,20 @@ Responsive start
     }
     .accordion-container .accordion{
         width: 100%;
+    }
+    .banner video{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .banner .content{
+        position: absolute;
+        z-index: 1;
+        margin: 0 auto;
+        text-align: center;
+        border: 2rem solid var(--background);
+        border-radius: 1rem;
+        box-shadow: 0rem 0rem 2rem var(--color-green);
     }
     .footer{
         margin: 0 1rem;
